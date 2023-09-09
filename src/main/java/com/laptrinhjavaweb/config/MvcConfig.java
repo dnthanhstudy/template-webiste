@@ -18,4 +18,9 @@ public class MvcConfig implements WebMvcConfigurer {
         resolver.setSuffix(".jsp");
         registry.viewResolver(resolver);
     }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/template/**").addResourceLocations("/template/");
+    }
 }
